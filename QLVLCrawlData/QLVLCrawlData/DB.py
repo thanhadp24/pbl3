@@ -8,9 +8,11 @@ def save_company_into_DB(data):
         query = "INSERT INTO company (id, name, address, industry_id) VALUES (0, %s, %s, '3')"
         for i in data:
             getCompanyId = "SELECT id FROM company WHERE NAME = '" + str(i[0]) + "'"
-            companyId = getIdFromDB(getCompanyId)
-            if companyId == None:
+            cursor.execute(getCompanyId)
+            id = cursor.fetchone()
+            if id is None:
                 cursor.execute(query, i)
+               
         connection.commit()
         connection.close()
     except Exception as e:
@@ -23,8 +25,10 @@ def save_rank_into_DB(data):
         query = "INSERT INTO `rank` (id, name) VALUES (0, %s)"
         for i in data:
             getRankId = "SELECT id FROM `rank` WHERE NAME = '" + str(i) + "'"
-            rankId = getIdFromDB(getRankId)
-            if rankId == "":
+            
+            cursor.execute(getRankId)
+            id = cursor.fetchone()
+            if id is None:
                 e = (i,)
                 cursor.execute(query, e)
                 
@@ -65,3 +69,4 @@ def getIdFromDB(data):
         return res
     except Exception as e:
         logger.error(f"Error occured while saving data to DB: {e}")
+        

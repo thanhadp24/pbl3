@@ -23,6 +23,9 @@ import mysql.connector
 # a.extend(l[3:6])
 # print(len(a))
 
-str = ""
-if str == "":
-    print(1)
+l = [1, 1, 2, None, 4, None]
+for i in l:
+    if i is None:
+        print("none")
+    else:
+        print("not none")

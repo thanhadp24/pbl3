@@ -20,7 +20,7 @@ def craw_company_info():
     chrome_options.add_argument('--headless')
     try:
         with webdriver.Chrome(options=chrome_options) as driver:        
-            elements = get_info(driver, 1)
+            elements = get_info(driver, 5)
             elements = list(filter(None, elements)) # filter none element
 
             companyInfo = []
@@ -39,8 +39,8 @@ def craw_company_info():
             print(len(companyInfo))
             print(len(rankInfo))
             save_company_into_DB(companyInfo)
-            # save_rank_into_DB(rankInfo)
-            # save_recruitment_into_DB(elements)
+            save_rank_into_DB(rankInfo)
+            save_recruitment_into_DB(elements)
             
     except Exception as e:
         logger.error(f"Error occurred while scraping data: {e}")

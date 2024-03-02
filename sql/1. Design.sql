@@ -14,8 +14,8 @@ CREATE TABLE IF NOT EXISTS COMPANY
 );
 
 
-SELECT id FROM `rank` where name = 'Chuyên viên- nhân viên';
-SELECT * FROM company where name = 'Công Ty Cổ Phần Giải Pháp Kết Nối Số';
+SELECT * FROM `rank`;
+SELECT * FROM company;
 SELECT * FROM industry;
 SELECT * FROM recruitment_detail;
 
