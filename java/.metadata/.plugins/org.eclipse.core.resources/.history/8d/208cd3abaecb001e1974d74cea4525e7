@@ -1,0 +1,31 @@
+package view;
+
+import java.io.IOException;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
+public class TestCrawl {
+	private static final String url = "https://www.vietnamworks.com/tim-viec-lam/tim-tat-ca-viec-lam";
+	
+	public static void main(String[] args) {
+		try {
+			Document doc = Jsoup.connect(url).get();
+			Elements jobElements = doc.select("div.sc-jOnpCo.foIqhz.vnwLayout_container");
+			Elements img = doc.getElementsByTag("line-clamp-1");
+			System.out.println(jobElements.select("div.sc-eBHhsj.kOdTBe").size());
+			/*for (Element job: jobElements) {
+				String description = job.select("h3.line-clamp-1").text();
+				String companyName = job.select("div.mt-1.line-clamp-1").text();
+				
+				System.out.println(description + " -> " + companyName + " -> " );
+			}*/
+			
+			
+		} catch (IOException e) {
+ 			e.printStackTrace();
+		} 
+		
+	}
+}

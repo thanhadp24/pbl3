@@ -1,0 +1,11 @@
+package web;
+
+public class CrawlTopcv {
+	
+	public static void main(String[] args) {
+		
+		private static final String link = "https://www.topcv.vn/";
+		
+		
+	}
+}

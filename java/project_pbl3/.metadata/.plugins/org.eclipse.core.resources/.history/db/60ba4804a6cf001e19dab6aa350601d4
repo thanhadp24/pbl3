@@ -1,0 +1,26 @@
+package web;
+
+import java.io.IOException;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
+public class CrawlTopcv {
+	
+	private static final String url = "https://www.topcv.vn/viec-lam";
+
+	public static void main(String[] args) {
+		
+		try {
+			Document page = Jsoup.connect(url).get();
+			Elements text = page.select("[class=row feature_job_item]");
+			int size = text.select("[class=col-md-4 col-sm-6 feature-job job-ta]").size();
+			System.out.println(size);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
+}

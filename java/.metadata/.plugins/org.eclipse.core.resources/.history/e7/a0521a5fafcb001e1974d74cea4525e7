@@ -1,0 +1,29 @@
+package view;
+
+import java.io.IOException;
+import java.util.Iterator;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+public class TestCrawl {
+	private static final String url = "https://topdev.vn/viec-lam-it?src=topdev.vn&medium=mainmenu";
+	
+	public static void main(String[] args) {
+		try {
+			Document doc = Jsoup.connect(url).get();
+			Elements elements = doc.select("div.container");
+			
+			for(Element element: elements) {
+				System.out.println(element.ownText());
+			}
+			
+			
+		} catch (IOException e) {
+ 			e.printStackTrace();
+		} 
+		
+	}
+}

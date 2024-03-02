@@ -1,0 +1,26 @@
+package web;
+
+import java.io.IOException;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+public class Test {
+	
+	public static void main(String[] args) {
+		String link = "https://topdev.vn/viec-lam-it?src=topdev.vn&medium=mainmenu";
+		try {
+			Document doc = Jsoup.connect(link).get();
+			int size = doc.select(".mt-4").size();
+			for (int i = 0; i < size; i++) {
+				String text = doc.select(".mb-4.last:mb-0").text();
+				System.out.println(text);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+}

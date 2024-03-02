@@ -1,0 +1,5 @@
+INDEX VERSION 1.134+D:\PBL3\java\project_pbl3\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+168546526.index
+1243057733.index
+1864134451.index

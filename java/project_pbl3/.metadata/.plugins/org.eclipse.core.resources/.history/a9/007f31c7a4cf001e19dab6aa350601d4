@@ -1,0 +1,24 @@
+package web;
+
+import java.io.IOException;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+public class CrawlTopcv {
+	
+	private static final String url = "https://www.topcv.vn/";
+
+	public static void main(String[] args) {
+		
+		try {
+			Document page = Jsoup.connect(url).get();
+			String nbop = page.select(".hight-light").text();
+			System.out.println(nbop);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
+}

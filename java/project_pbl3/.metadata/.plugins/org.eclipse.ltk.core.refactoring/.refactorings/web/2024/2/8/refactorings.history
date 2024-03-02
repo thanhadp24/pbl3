@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;web.Crawl&apos; to &apos;CrawlTopDev&apos;&#x0D;&#x0A;- Original project: &apos;web&apos;&#x0D;&#x0A;- Original element: &apos;web.Crawl&apos;&#x0D;&#x0A;- Renamed element: &apos;web.CrawlTopDev&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Crawl&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;web{Crawl.java[Crawl" matchStrategy="1" name="CrawlTopDev" qualified="false" references="true" similarDeclarations="false" stamp="1708401273355" textual="false" version="1.0"/>
+</session>

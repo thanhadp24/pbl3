@@ -1,0 +1,30 @@
+package view;
+
+import java.io.IOException;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.select.Elements;
+
+public class TestCrawl {
+	private static final String url = "https://topdev.vn/viec-lam-it?src=topdev.vn&medium=mainmenu";
+	
+	public static void main(String[] args) {
+		try {
+			Document doc = Jsoup.connect(url).get();
+			Elements jobElements = doc.select("div.flex items-start.justify-between.gap-6.p-4");
+			System.out.println(jobElements.select("div.flex-1").size());
+			/*for (Element job: jobElements) {
+				String description = job.select("h3.line-clamp-1").text();
+				String companyName = job.select("div.mt-1.line-clamp-1").text();
+				
+				System.out.println(description + " -> " + companyName + " -> " );
+			}*/
+			
+			
+		} catch (IOException e) {
+ 			e.printStackTrace();
+		} 
+		
+	}
+}
