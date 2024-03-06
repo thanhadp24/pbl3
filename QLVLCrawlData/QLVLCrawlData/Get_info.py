@@ -50,12 +50,15 @@ def get_profile_info_24(driver, url):
         logger.error(f"Error occurred while scraping data from {url}: {e}")
         return []
     
+# https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?occupation_ids%5B%5D=7&page=2&sort_q= >> IT hardware-network-telecommunication
+# https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?occupation_ids%5B%5D=13&occupation_ids%5B%5D=13&page=2&sort_q= >> Business
+# https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?occupation_ids%5B%5D=18&page=2&sort_q= >> Finance-Investment
 def get_info(driver, num_pages):
     try:
         page_start = 1
         data = []
         while page_start <= num_pages:
-            url = f'https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?page={page_start}&q=kinh%20doanh&sort_q='
+            url = f'https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?occupation_ids%5B%5D=13&occupation_ids%5B%5D=13&page={page_start}&sort_q='
 
             driver.get(url)
             sleep(2)
