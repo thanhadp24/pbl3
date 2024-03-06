@@ -53,12 +53,17 @@ def get_profile_info_24(driver, url):
 # https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?occupation_ids%5B%5D=7&page=2&sort_q= >> IT hardware-network-telecommunication
 # https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?occupation_ids%5B%5D=13&occupation_ids%5B%5D=13&page=2&sort_q= >> Business
 # https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?occupation_ids%5B%5D=18&page=2&sort_q= >> Finance-Investment
+# https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?occupation_ids%5B%5D=12&page=4&sort_q= >> Marketing
+# https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?occupation_ids%5B%5D=26&page=2&sort_q= >> Auditing
+# https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?occupation_ids%5B%5D=8&page=2&sort_q=  >> IT software
+# https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?occupation_ids%5B%5D=3&page=2&sort_q=  >> Design - creative arts
+# https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?occupation_ids%5B%5D=21&page=2&sort_q= >> HealthCare
 def get_info(driver, num_pages):
     try:
         page_start = 1
         data = []
         while page_start <= num_pages:
-            url = f'https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?occupation_ids%5B%5D=13&occupation_ids%5B%5D=13&page={page_start}&sort_q='
+            url = f'https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?occupation_ids%5B%5D=21&page={page_start}&sort_q='
 
             driver.get(url)
             sleep(2)

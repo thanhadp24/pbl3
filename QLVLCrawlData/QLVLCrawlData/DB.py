@@ -5,7 +5,7 @@ def save_company_into_DB(data):
     try:
         connection = mysql.connector.connect(user='root', password='1234', host='localhost', database='pbl3')
         cursor = connection.cursor()
-        query = "INSERT INTO company (name, address, industry_id) VALUES (%s, %s, '2')"
+        query = "INSERT INTO company (name, address, industry_id) VALUES (%s, %s, '8')"
         for i in data:
             getCompanyId = "SELECT id FROM company WHERE NAME = '" + str(i[0]) + "'"
             cursor.execute(getCompanyId)

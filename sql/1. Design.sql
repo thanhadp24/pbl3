@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS COMPANY
 SELECT * FROM `rank`;
 SELECT * FROM company;
 SELECT * FROM industry;
-SELECT * FROM recruitment_detail;
+SELECT count(*) FROM recruitment_detail;
 
 
 -- create table industry
@@ -101,3 +101,7 @@ VALUES ('IT hardware - Network - Telecommunication'),
        ('Marketing'),
        ('Auditing');
 
+INSERT INTO industry(`name`)
+VALUES ('IT software'),
+	   ('Design - Creative Arts'),
+       ('HealthCare');

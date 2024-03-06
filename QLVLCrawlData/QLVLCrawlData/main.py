@@ -38,6 +38,8 @@ def craw_company_info():
             print(len(elements))
             print(len(companyInfo))
             print(len(rankInfo))
+
+           
             save_company_into_DB(companyInfo)
             save_rank_into_DB(rankInfo)
             save_recruitment_into_DB(elements)
