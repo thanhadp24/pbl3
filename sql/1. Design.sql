@@ -14,12 +14,6 @@ CREATE TABLE IF NOT EXISTS COMPANY
 );
 
 
-SELECT * FROM `rank`;
-SELECT * FROM company;
-SELECT * FROM industry;
-SELECT count(*) FROM recruitment_detail;
-
-
 -- create table industry
 DROP TABLE IF EXISTS INDUSTRY;
 CREATE TABLE IF NOT EXISTS INDUSTRY 

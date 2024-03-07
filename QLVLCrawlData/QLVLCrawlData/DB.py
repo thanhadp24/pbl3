@@ -45,15 +45,20 @@ def save_recruitment_into_DB(data):
         for i in data:
             getCompanyId = "SELECT id FROM company WHERE NAME = '" + str(i[0]) + "'"
             getRankId = "SELECT id FROM `rank` WHERE NAME = '" + str(i[2]) + "'"
-            
+            getJobName = "SELECT id FROM recuitment_detail WHERE JOB_NAME = '" + str(i[3]) + "'"
+
+            cursor.execute(getJobName)
+            jobName = cursor.fetchone()
+
             companyId = getIdFromDB(getCompanyId)
             rankId = getIdFromDB(getRankId)
-            tmp = []
-            tmp.append(companyId)
-            tmp.append(rankId)
-            tmp.extend(i[3:18])
             
-            cursor.execute(query, tmp)
+            if jobName is None:
+                tmp = []
+                tmp.append(companyId)
+                tmp.append(rankId)
+                tmp.extend(i[3:18])
+                cursor.execute(query, tmp)
         connection.commit()
         connection.close()
     except Exception as e:
