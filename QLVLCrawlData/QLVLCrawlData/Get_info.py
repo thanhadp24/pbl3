@@ -58,13 +58,15 @@ def get_profile_info_24(driver, url):
 # https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?occupation_ids%5B%5D=8&page=2&sort_q=  >> IT software
 # https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?occupation_ids%5B%5D=3&page=2&sort_q=  >> Design - creative arts
 # https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?occupation_ids%5B%5D=21&page=2&sort_q= >> HealthCare
-def get_info(driver, num_pages):
+def get_info(driver, num_pages, link):
     try:
         page_start = 1
         data = []
+        last_ampersand_index = link.rindex('&')
+        sec_equal_index = link.rindex('page=')
         while page_start <= num_pages:
-            url = f'https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?occupation_ids%5B%5D=21&page={page_start}&sort_q='
-
+            url = f'{link[:sec_equal_index + 5]}{page_start}{link[last_ampersand_index:]}'
+           # url = f'https://vieclam24h.vn/tim-kiem-viec-lam-nhanh?occupation_ids%5B%5D=21&page={page_start}&sort_q='
             driver.get(url)
             sleep(2)
             profile_urls = get_profile_urls_24(driver, url)

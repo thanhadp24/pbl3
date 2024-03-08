@@ -1,9 +1,9 @@
 SET FOREIGN_KEY_CHECKS = 0;
 
 DELETE FROM company;
-DELETE FROM industry;
-DELETE FROM recruitment_detail;
-DELETE FROM `rank`;
+DELETE FROM career;
+DELETE FROM info_recruitment_detail;
+DELETE FROM position;
 DELETE FROM `user`;
 DELETE FROM `role`;
 

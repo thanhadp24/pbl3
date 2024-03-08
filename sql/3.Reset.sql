@@ -1,9 +1,9 @@
 SET FOREIGN_KEY_CHECKS = 0;
 
 DROP TABLE company;
-DROP TABLE industry;
-DROP TABLE RECRUITMENT_DETAIL;
-DROP TABLE `rank`;
+DROP TABLE career;
+DROP TABLE info_recruitment_detail;
+DROP TABLE position;
 DROP TABLE `USER`;
 DROP TABLE `ROLE`;
 
